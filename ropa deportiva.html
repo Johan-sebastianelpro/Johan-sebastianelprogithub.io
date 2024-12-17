@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ropa Deportiva - Nutri Sports</title>
+	<link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTseOWAZ285LLWnMxmtGsJCOmOIq9jiGtbyPw&s" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e7f3ff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #6CABDD;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #ffc107;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        .frame-container {
+            border: 2px solid #87ceeb;
+            width: 90%;
+            height: 400px;
+            margin-bottom: 20px;
+        }
+        .animated-image {
+            width: 200px;
+            height: auto;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        .menu-button {
+            background-color: #6CABDD;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .menu-button:hover {
+            background-color: #87CEEB;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Ropa Deportiva - Nutri Sports</h1>
+</header>
+
+<nav>
+</nav>
+
+<main>
+ 
+    </section>
+
+    <!-- Imágenes animadas -->
+    <section>
+        <h2>Productos destacados</h2>
+        <img src="https://www.texmagenta.com/wp-content/uploads/2023/06/cropped-PPAL-DEPORTIVAS.png" alt="Camiseta Deportiva" class="animated-image">
+        <img src="https://img.freepik.com/vector-premium/ilustracion-vector-pantalones-deportivos_38893-112.jpg" alt="Pantalones Deportivos" class="animated-image">
+        <img src="https://www.plasticaucho.com.pe/blog/wp-content/uploads/2021/08/Por-qu%C3%A9-las-marcas-de-zapatillas-deportivas-se-rinden-a-la-teor%C3%ADa-del-color.jpg" alt="Zapatillas Deportivas" class="animated-image">
+		<img src="https://static.wixstatic.com/media/127887_3fadfa16210d4bc2aa2e5946e53dc65d~mv2.jpg/v1/fill/w_750,h_1000,al_c,q_85/127887_3fadfa16210d4bc2aa2e5946e53dc65d~mv2.jpg" alt="guayos" class="animated-image">
+        <img src="https://www.clicshop.com.uy/imgs/productos/_original_24562.jpg" alt="Pantalones Deportivos" class="animated-image">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_990189-MCO49799056986_042022-O.webp">
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVhO_Y3S697sfgmtvCwzyZeuq-Gt3f04zw9w&s">
+	
+    </section>
+	
+
+    <!-- Botón para regresar al menú -->
+    <button class="menu-button" onclick="regresarAlMenu()">Regresar al Menú</button>
+</main>
+
+<footer>
+    <p>&copy; 2024 Nutri Sports. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    function mostrarSeleccion() {
+        const seleccion = document.getElementById("tipo-ropa").value;
+        const mensaje = seleccion ? `Has seleccionado: ${seleccion}` : "Por favor, selecciona un tipo de ropa.";
+        document.getElementById("seleccion").innerText = mensaje;
+    }
+
+    function regresarAlMenu() {
+        window.scrollTo(0, 0);
+    }
+</script>
+
+</body>
+</html>

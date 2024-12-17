@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habilidades de Fútbol 1.2</title>
+	<link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFYZUnETDOkTmrgXTw_vdsGhmlc60usye3BQ&s" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e7f3ff; /* Azul claro */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            background-color: red; /* Azul City */
+            color: yellow;
+            padding: 10px 0;
+            text-align: center;
+            width: 100%;
+        }
+        main {
+            display: flex;
+            width: 90%;
+            margin: 20px auto;
+            gap: 20px;
+        }
+        .left, .right {
+            flex: 1;
+        }
+        .left {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .left img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .right {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .right label {
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .right select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: 2px solid #6CABDD;
+            border-radius: 5px;
+        }
+        .right p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .right img {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+            display: none;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Habilidades de Fútbol 1.2</h1>
+</header>
+
+<main>
+    <!-- Sección derecha: Información interactiva -->
+    <div class="right">
+        <label for="habilidades">Selecciona una habilidad:</label>
+        <select id="habilidades" onchange="mostrarInformacion()">
+            <option value="">--Seleccionar--</option>
+            <option value="colocacion">Colocación </option>
+            <option value="buscar-huecos">Buscar Huecos </option>
+            <option value="control-juego">Control del Juego </option>
+            <option value="habilidad-goleadora">Habilidad Goleadora </option>
+            <option value="uno-contra-uno">1 contra 1 </option>
+            <option value="habilidad-jug">Versatilidad </option>
+            <option value="evitar-fuera-de-juego">Evitar Fuera de Juego </option>
+            <option value="tiros-lejos">Tiros desde Lejos </option>
+            <option value="juego-bandas">Juego por las Bandas</option>
+            <option value="juego-centro">Juego por el Centro </option>
+        </select>
+
+        <p id="info"></p>
+        <img id="info-img" src="" alt="">
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2024 Habilidades de Fútbol. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    function mostrarInformacion() {
+        const habilidad = document.getElementById("habilidades").value;
+        const info = document.getElementById("info");
+        const infoImg = document.getElementById("info-img");
+        let texto = "";
+        let imagen = "";
+
+        switch (habilidad) {
+            case "colocacion":
+                texto = "Luka Modric es un maestro en la colocación, anticipándose y ocupando espacios clave.";
+                imagen = "https://mbpschool.com/wp-content/uploads/2022/01/Foto-5-2.png";
+                break;
+            case "buscar-huecos":
+                texto = "Kevin De Bruyne tiene una visión única para encontrar huecos en la defensa.";
+                imagen = "https://www.spherasports.com/wp-content/uploads/2022/09/Foto-1-2-754x426.png";
+                break;
+            case "control-juego":
+                texto = "Lionel Messi controla el juego con pases precisos y movimientos inteligentes.";
+                imagen = "https://www.tiempoar.com.ar/wp-content/uploads/2022/12/20221211-Argentina-vs-Holanda-Qatar-2022-Frank-Fife.jpg";
+                break;
+            case "habilidad-goleadora":
+                texto = "Erling Haaland destaca por su capacidad goleadora implacable.";
+                imagen = "https://media.cnn.com/api/v1/images/stellar/prod/cnne-1276667-221003115713-haaland-foden-manchester-derby.jpg?c=original";
+                break;
+            case "uno-contra-uno":
+                texto = "Vinícius Jr. es un experto en el 1 contra 1, desbordando con habilidad.";
+                imagen = "https://phantom-elmundo.unidadeditorial.es/c8e4bf0d6beed4e1fafc953b9b62e8e9/crop/0x0/2603x1735/resize/1200/f/jpg/assets/multimedia/imagenes/2021/08/23/16297255222385.jpg";
+                break;
+            case "habilidad-jug":
+                texto = "Bernardo Silva es increíblemente versátil, adaptándose a varias posiciones.";
+                imagen = "https://www.mundodeportivo.com/files/image_449_220/uploads/2023/08/16/64dcae3083873.jpeg";
+                break;
+            case "evitar-fuera-de-juego":
+                texto = "Harry Kane evita el fuera de juego con un excelente timing en sus movimientos.";
+                imagen = "https://cdn.resfu.com/media/img_news/kane-recibe-en-fuera-de-juego-durante-el-partido-de-la-segunda-jornada-de-la-liga-de-las-naciones-entre-alemania-e-inglaterra--captura-uefatv.jpg?size=1000x&lossy=1https://example.com/kane.jpg";
+                break;
+            case "tiros-lejos":
+                texto = "Bruno Fernandes es conocido por sus potentes tiros desde larga distancia.";
+                imagen = "https://vi.cdn.pxr.nl/.imaging/mte/vinl-website-theme/760x428/dam/articles/2024/04/07/naamloos-2er.jpg/jcr:content/naamloos-2er.jpg";
+                break;
+            case "juego-bandas":
+                texto = "Mohamed Salah domina el juego por las bandas con velocidad y técnica.";
+                imagen = "https://images.indianexpress.com/2023/03/salah-martinez.jpg?w=640";
+                break;
+            case "juego-centro":
+                texto = "Jude Bellingham lidera el juego por el centro con su energía y técnica.";
+                imagen = "https://phantom-marca.unidadeditorial.es/3f08c6cf170732458aace52e72ebe0cf/resize/414/f/jpg/assets/multimedia/imagenes/2023/09/08/16942018921411.png";
+                break;
+            default:
+                texto = "Selecciona una habilidad para aprender más sobre ella.";
+                imagen = "";
+        }
+
+        info.textContent = texto;
+        if (imagen) {
+            infoImg.src = imagen;
+            infoImg.alt = texto;
+            infoImg.style.display = "block";
+        } else {
+            infoImg.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habilidades de Fútbol 1.3</title>
+	<link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShAOzvYYIEgXt9ZWeWOD3MJVKPnLaes2H94g&s" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: blue; /* Azul claro */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            background-color: green; /* Azul city */
+            color: red;
+            padding: 10px 0;
+            text-align: center;
+            width: 100%;
+        }
+        main {
+            display: flex;
+            width: 90%;
+            margin: 20px auto;
+            gap: 20px;
+        }
+        .left {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .left img {
+            max-width: 100%;
+            border-radius: 8px;
+            display: none;
+        }
+        .right {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .right label {
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .right select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: 2px solid #6CABDD;
+            border-radius: 5px;
+        }
+        .right p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Habilidades de Fútbol 1.3</h1>
+</header>
+
+<main>
+    <!-- Sección izquierda: Imágenes dinámicas -->
+    <div class="left">
+        <img id="info-img" src="" alt="Imagen de habilidad">
+    </div>
+
+    <!-- Sección derecha: Información interactiva -->
+    <div class="right">
+        <label for="habilidades">Selecciona una habilidad:</label>
+        <select id="habilidades" onchange="mostrarInformacion()">
+            <option value="">--Seleccionar--</option>
+            <option value="tecnica">Técnica</option>
+            <option value="agresividad">Agresividad</option>
+            <option value="fortaleza">Fortaleza Mental</option>
+            <option value="habilidad-portero">Habilidad de Portero</option>
+            <option value="juego-equipo">Juego en Equipo</option>
+            <option value="regularidad">Regularidad</option>
+            <option value="pierna-mala">Uso de la Pierna Mala</option>
+            <option value="res-lesiones">Resistencia a Lesiones</option>
+            <option value="regate">Tendencia al Regate</option>
+            <option value="contemporizar">Contemporizar</option>
+        </select>
+
+        <p id="info"></p>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2024 Habilidades de Fútbol. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    function mostrarInformacion() {
+        const habilidad = document.getElementById("habilidades").value;
+        const info = document.getElementById("info");
+        const infoImg = document.getElementById("info-img");
+        let texto = "";
+        let imagen = "";
+
+        switch (habilidad) {
+            case "tecnica":
+                texto = "La técnica es fundamental para ejecutar movimientos precisos y controlados en el fútbol. Lionel Messi es un referente en este aspecto.";
+                imagen = "https://cdn.futbolargentino.com/sdi/2020/12/28/barcelona-afrontara-un-duelo-clave-ante-eibar-con-un-lionel-messi-de-vacaciones-880271.jpg"; 
+                break;
+            case "agresividad":
+                texto = "La agresividad permite a los jugadores pelear cada balón como si fuera el último. Sergio Ramos es un ejemplo icónico.";
+                imagen = "https://uh.gsstatic.es/deportes/futbol/2018/06/05/758251/sergio-ramos-defiende-por-lesiones-salah-karius.jpg";
+                break;
+            case "fortaleza":
+                texto = "La fortaleza mental es clave para superar adversidades y mantener la concentración. Cristiano Ronaldo destaca por su mentalidad ganadora.";
+                imagen = "https://estaticos-cdn.prensaiberica.es/clip/8ed999f8-635e-4620-9346-883fdf17b958_alta-libre-aspect-ratio_default_0.jpg";
+                break;
+            case "habilidad-portero":
+                texto = "La habilidad de portero incluye reflejos rápidos, posicionamiento y valentía. Manuel Neuer es uno de los mejores en esta posición.";
+                imagen = "https://www.defensacentral.com/userfiles/2017/Apr/13/340x220/neuer_O.jpg";
+                break;
+            case "juego-equipo":
+                texto = "El juego en equipo es esencial para el éxito colectivo. Kevin De Bruyne ejemplifica esta cualidad con sus asistencias.";
+                imagen = "https://images.ecestaticos.com/rF51ZZeetd1Slp23NV744YOJ_LE=/0x0:2272x1515/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F6eb%2F179%2Fc1f%2F6eb179c1f989d3a7238e5bea1ad3c7c6.jpg";
+                break;
+            case "regularidad":
+                texto = "La regularidad es la capacidad de rendir constantemente a alto nivel. Luka Modric es un modelo de consistencia.";
+                imagen = "https://imagenes.elpais.com/resizer/v2/4SCHOUD5MIO4ZV4M454QT76G24.jpg?auth=165977b25fe0f043f1306096d754023d36585fe8593f5246baec1cbdfaaa9015&width=414";
+                break;
+            case "pierna-mala":
+                texto = "El uso de la pierna mala amplía las opciones en el juego. Neymar ha demostrado ser hábil con ambas piernas.";
+                imagen = "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/93A4/production/_102169773_gettyimages-981406932.jpg.webp";
+                break;
+            case "res-lesiones":
+                texto = "La resistencia a lesiones permite a los jugadores mantenerse en forma durante toda la temporada. James Milner es un ejemplo notable.";
+                imagen = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPofADZ2DpMEgxSRZvFntsKY7oQSXs6bAD1A&s";
+                break;
+            case "regate":
+                texto = "La tendencia al regate permite a los jugadores superar rivales con habilidad. Vinícius Jr. es conocido por su capacidad de regate.";
+                imagen = "https://livesport-ott-images.ssl.cdn.cra.cz/r900xfq60/1b6f124e-abd4-45b6-adab-4c6b0709569f.jpeg";
+                break;
+            case "contemporizar":
+                texto = "Contemporizar es la habilidad de controlar los tiempos del partido. Toni Kroos es experto en esta técnica.";
+                imagen = "https://www.living4football.club/wp-content/uploads/2018/07/An%C3%A1lisis-Toni-Kross.jpg";
+                break;
+            default:
+                texto = "Selecciona una habilidad para aprender más sobre ella.";
+                imagen = "";
+        }
+
+        info.textContent = texto;
+        if (imagen) {
+            infoImg.src = imagen;
+            infoImg.style.display = "block";
+        } else {
+            infoImg.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>

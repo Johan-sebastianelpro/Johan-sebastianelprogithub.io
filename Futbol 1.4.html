@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habilidades de Fútbol</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e7f3ff; /* Azul claro */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            background-color: green; /* Azul City */
+            color: red;
+            padding: 10px 0;
+            text-align: center;
+            width: 100%;
+        }
+        main {
+            display: flex;
+            width: 90%;
+            margin: 20px auto;
+            gap: 20px;
+        }
+        .left {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .left img {
+            max-width: 100%;
+            border-radius: 8px;
+            display: none;
+        }
+        .right {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .right label {
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .right select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: 2px solid #6CABDD;
+            border-radius: 5px;
+        }
+        .right p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Habilidades de Fútbol 1.4</h1>
+</header>
+
+<main>
+    <!-- Sección izquierda: Imagen dinámica -->
+    <div class="left">
+        <img id="habilidad-img" src="" alt="Imagen del jugador" />
+    </div>
+
+    <!-- Sección derecha: Información interactiva -->
+    <div class="right">
+        <label for="habilidades">Selecciona una habilidad:</label>
+        <select id="habilidades" onchange="mostrarInformacion()">
+            <option value="">--Seleccionar--</option>
+            <option value="prec-pase-corto">Precisión Pase Corto</option>
+            <option value="vel-pase-corto">Velocidad Pase Corto</option>
+            <option value="prec-pase-largo">Precisión Pase Largo</option>
+            <option value="vel-pase-largo">Velocidad Pase Largo</option>
+            <option value="prec-tiro">Precisión de Tiro</option>
+            <option value="pot-tiro">Potencia de Tiro</option>
+            <option value="tec-tiro">Técnica de Tiro</option>
+            <option value="eficacia">Eficacia (TL)</option>
+            <option value="efecto">Efecto</option>
+            <option value="cabezazo">Cabezazo</option>
+            <option value="salto">Salto</option>
+        </select>
+
+        <p id="info"></p>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2024 Habilidades de Fútbol. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    function mostrarInformacion() {
+        const habilidad = document.getElementById("habilidades").value;
+        const info = document.getElementById("info");
+        const img = document.getElementById("habilidad-img");
+        let texto = "";
+        let imagen = "";
+
+        switch (habilidad) {
+            case "prec-pase-corto":
+                texto = "La precisión en el pase corto permite mantener el control del juego. Jugador destacado: Kevin De Bruyne.";
+                imagen = "https://cdn.milenio.com/uploads/media/2020/07/26/kevin-de-bruyne-efe.jpg";
+                break;
+            case "vel-pase-corto":
+                texto = "La velocidad en el pase corto ayuda a romper líneas defensivas. Jugador destacado: Luka Modric.";
+                imagen = "https://img.europapress.es/fotoweb/fotonoticia_20240528002718_690.jpg";
+                break;
+            case "prec-pase-largo":
+                texto = "La precisión en el pase largo crea oportunidades desde la distancia. Jugador destacado: Trent Alexander-Arnold.";
+                imagen = "https://es.coachesvoice.com/wp-content/uploads/2020/02/1.png";
+                break;
+            case "vel-pase-largo":
+                texto = "La velocidad en el pase largo es crucial para contragolpes rápidos. Jugador destacado: Toni Kroos.";
+                imagen = "https://i.ytimg.com/vi/16HdFIaXOyM/sddefault.jpg";
+                break;
+            case "prec-tiro":
+                texto = "La precisión de tiro asegura goles en situaciones clave. Jugador destacado: Lionel Messi.";
+                imagen = "https://elcomercio.pe/resizer/KlYJ1kOAucjLKKak1F_iWSzwcyI=/1200x675/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/LCVL52DNA5AHDOLDI5RIDYXTS4.jpg";
+                break;
+            case "pot-tiro":
+                texto = "La potencia en el tiro es una herramienta letal desde cualquier posición. Jugador destacado: Erling Haaland.";
+                imagen = "https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2021/09/07/6136f95c2017b.jpeg";
+                break;
+            case "tec-tiro":
+                texto = "La técnica de tiro define la calidad de los disparos. Jugador destacado: Neymar Jr.";
+                imagen = "https://www.laprensa.hn/binrepository/600x379/0c0/0d0/none/11004/TSTG/Neymargolazofalta_LP999629_MG67254093.jpg";
+                break;
+            case "eficacia":
+                texto = "La eficacia en el tiro libre decide partidos. Jugador destacado: James Ward-Prowse.";
+                imagen = "https://eu-images.contentstack.com/v3/assets/blta90d05ad41a54a71/blt78f21bcd28f589fa/63c56a68d9b20326a9e526e6/picture_-_2023-01-16T144424.553.png";
+                break;
+            case "efecto":
+                texto = "El efecto en el balón engaña a los porteros. Jugador destacado: Cristiano Ronaldo.";
+                imagen = "https://i.ytimg.com/vi/YtFHcT0jJNE/maxresdefault.jpg";
+                break;
+            case "cabezazo":
+                texto = "Un buen cabezazo puede definir jugadas aéreas. Jugador destacado: Robert Lewandowski.";
+                imagen = "https://www.bitbol.co/files/image/101/101057/671d4f49176ef.jpg";
+                break;
+            case "salto":
+                texto = "Un gran salto permite ganar duelos aéreos. Jugador destacado: Virgil van Dijk.";
+                imagen = "https://c8.alamy.com/compfr/2h4mwc5/liverpool-royaume-uni-03eme-novembre-2021-virgile-van-dijk-de-liverpool-saute-a-la-tete-de-la-balle-avec-felipe-de-l-atletico-madrid-uefa-champions-league-groupe-b-match-liverpool-v-atletico-madrid-au-stade-anfield-de-liverpool-le-mercredi-3-novembre-2021-cette-image-ne-peut-etre-utilisee-qu-a-des-fins-editoriales-utilisation-editoriale-uniquement-licence-requise-pour-une-utilisation-commerciale-aucune-utilisation-dans-les-paris-les-jeux-ou-les-publications-d-un-seul-club-ligue-joueur-photo-par-chris-stading-andrew-orchard-sports-photography-alamy-live-news-credit-andrew-orchard-sports-photography-alamy-live-news-2h4mwc5.jpg";
+                break;
+            default:
+                texto = "Selecciona una habilidad para aprender más sobre ella.";
+                imagen = "";
+        }
+
+        info.textContent = texto;
+        if (imagen) {
+            img.src = imagen;
+            img.style.display = "block";
+        } else {
+            img.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>

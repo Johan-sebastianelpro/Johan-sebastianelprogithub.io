@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redes Sociales</title>
+	<link rel="icon" href="https://static.vecteezy.com/system/resources/previews/003/600/930/non_2x/set-of-social-media-icon-in-black-background-free-vector.jpg" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: blue;
+        }
+        h1 {
+            color: pink;
+        }
+        .social-icons {
+            margin-top: 20px;
+            display: none;
+        }
+        .social-icons img {
+            width: 50px;
+            margin: 10px;
+        }
+        .toggle-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .toggle-button:hover {
+            background-color: yellow;
+        }
+    </style>
+    <script>
+        function toggleSocialIcons() {
+            const icons = document.getElementById('social-icons');
+            if (icons.style.display === 'none' || icons.style.display === '') {
+                icons.style.display = 'block';
+            } else {
+                icons.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Redes Sociales</h1>
+    <button class="toggle-button" onclick="toggleSocialIcons()">Mostrar/Ocultar Redes Sociales</button>
+    <div id="social-icons" class="social-icons">
+        <div>
+            <a href="https://wa.me/573243439694" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+                <p>+57 324 3439694</p>
+            </a>
+        </div>
+        <div>
+            <a href="https://www.youtube.com/@SergioCepeda12/videos target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
+            </a>
+        </div>
+        <div>
+            <a href="https://www.facebook.com/profile.php?id=100050294806938&locale=es_LA" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+            </a>
+        </div>
+        <div>
+            <a href="https://www.tiktok.com/@andru202288?_t=8sA99MXAx5a&_r=1" target="_blank">
+                <img src="https://cdn.pixabay.com/photo/2021/01/30/06/42/tiktok-5962992_1280.png" alt="TikTok">
+            </a>
+        </div>
+    </div>
+</body>
+</html>
+
